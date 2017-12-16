@@ -2,14 +2,16 @@
 
 ;; Author: Nathanael Cho
 
+;; Packages that should be installed:
+;;   auctex, company-go, elpy, exec-path-from-shell,
+;;   flycheck, go-mode, haml-mode, js2-mode, json-mode
+;;   markdown-mode, shell-pop, use-package, web-mode
+;;   yasnippet
+
 
 ;;; Commentary:
 
-;; Until I get things more organized, all of my Emacs configurations
-;; live here, in this .emacs file.
-
-;; I may also have touched other .el files; if I did so, I flagged
-;; my change with a NACHO_CHANGE comment.
+;; Until I get things more organized, all my Emacs configurations live here.
 
 
 ;;; Code:

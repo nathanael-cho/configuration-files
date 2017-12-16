@@ -1,13 +1,17 @@
 ### Startup
 
-if [ -f "${HOME}/.bashrc" ]; then
-    source "${HOME}/.bashrc"
+CUR_DIR=$(pwd)
+
+if [ -f "$CUR_DIR/.bashrc" ]; then
+    source "$CUR_DIR/.bashrc"
 fi
 
-if [ -f "${HOME}/.bash_helpers" ]; then
-    source "${HOME}/.bash_helpers"
+if [ -f "$CUR_DIR/.bash_helpers" ]; then
+    source "$CUR_DIR/.bash_helpers"
 fi
 
-if [ -f "${HOME}/.bash_aliases" ]; then
-    source "${HOME}/.bash_aliases"
+if [ -f "$CUR_DIR/.bash_aliases" ]; then
+    source "$CUR_DIR/.bash_aliases"
 fi
+
+unset CUR_DIR
