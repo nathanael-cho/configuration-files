@@ -1,0 +1,21 @@
+*~
+*.aux
+*.DS_Store
+*.log
+*.min.js
+*.out
+*.plist
+*.history*
+
+Applications
+[Cc]ache
+[Cc]aches
+elpa/archives
+HMMT Archive
+Library
+[Ll]og
+[Ll]ogs
+*.pvm
+/tmp/
+*.vmwarevm
+X11

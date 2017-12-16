@@ -1,0 +1,67 @@
+### Helper Functions
+
+# List Homebrew packages and packages that require them
+brewdeps() {
+    brew list -1 | while read cask; do echo -ne "\x1B[1;34m $cask \x1B[0m"; brew uses $cask --installed | awk '{printf(" %s ", $0)}'; echo ""; done
+}
+
+# Lookup a word in the dictionary
+dictlu() {
+    if [ -z "$1" ]; then
+        echo "Usage: dictlu [word to be defined]" >&2 ; return
+    fi
+
+    open dict://$1
+}
+
+# Check the status of all git repositories
+gitrepos() {
+    find ~ -name ".git" -not -path "/Users/Nacho/Dropbox/HMMT Archive/*" -not -path "/Users/Nacho/.nvm/*" 2> /dev/null | sed 's/\/.git/\//g' | awk '{print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1; system("git --git-dir="$1".git --work-tree="$1" status")}'
+}
+
+# Check whether the user is in a subshell
+iss() {
+    if [ "$SHLVL" -gt "1" ]; then
+        cowsay -f hellokitty Yes
+    else
+        cowsay -f hellokitty No
+    fi
+}
+
+# Make a folder and `cd` into it
+mkcd() {
+    mkdir -p $1; cd $1
+}
+
+normalsize() {
+    resize -s 24 80 >/dev/null;
+}
+
+# Render a pdf version of a man page
+# Assumes that the user requests a single manual page
+pdfman() {
+    local la=${@: -1}
+    man -t $@ | pstopdf -i -o /tmp/$la.pdf && open /tmp/$la.pdf
+}
+
+openemacs(){
+    /Applications/Emacs.app/Contents/MacOS/Emacs "$@" &
+}
+
+# Goes up however many directories
+up(){
+    if [ -z "$1" ]; then
+        cd '../'; return
+    fi
+
+    re='^[0-9]+$'
+    if ! [[ $1 =~ $re ]]; then
+        echo "Usage: up [nonnegative integer]" >&2; return
+    fi
+
+    if [ "0" -eq "$1" ]; then
+        return;
+    fi
+
+    cd $(eval printf '../'%.0s {1..$1})
+}
