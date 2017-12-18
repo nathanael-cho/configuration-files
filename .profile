@@ -1,7 +1,3 @@
-CUR_DIR=$(pwd)
-
-if [ -f "$CUR_DIR/.bash_profile" ]; then
-    source "$CUR_DIR/.bash_profile"
+if [ -f "$HOME/.bash_profile" ]; then
+    source "$HOME/.bash_profile"
 fi
-
-unset CUR_DIR
