@@ -23,7 +23,7 @@ export EDITOR='emacs'
 
 # Set up Go
 export GOROOT='/usr/local/opt/go/libexec'
-export GOPATH="$HOME/.go"
+export GOPATH="$HOME/Development/go"
 MPATH="$GOROOT/bin:$MPATH"
 MPATH="$GOPATH/bin:$MPATH"
 

@@ -4,9 +4,9 @@
 
 ;; Packages that should be installed:
 ;;   auctex, company-go, elpy, exec-path-from-shell,
-;;   flycheck, go-mode, haml-mode, js2-mode, json-mode
-;;   markdown-mode, shell-pop, use-package, web-mode
-;;   yasnippet
+;;   flycheck, go-mode, haml-mode, js2-mode, json-mode,
+;;   markdown-mode, markdown-preview-mode, shell-pop,
+;;   use-package, web-mode, yasnippet
 
 
 ;;; Commentary:
@@ -34,6 +34,7 @@
 ;; Initial Setup
 
 (setq inhibit-startup-message t)
+(setq column-number-mode t)
 
 (add-to-list 'exec-path "/usr/local/bin/")
 
@@ -52,7 +53,6 @@
 
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
 (require 'bind-key)
 
 ;; Get the user's PATH and GOPATH
@@ -97,7 +97,7 @@
   (set-python-environment "python3"))
 
 ;; ESS
-(add-to-list 'load-path "~/.emacs.personal/ess/lisp")
+(add-to-list 'load-path "/Users/Nacho/.emacs.personal/ess/lisp")
 (load "ess-site")
 (defun my-ess-mode-hook()
   (setq ess-blink-region nil)
@@ -144,7 +144,7 @@
 (ido-mode t)
 
 ;; Markdown
-(add-to-list 'load-path "~/.emacs.d/markdown-mode")
+(add-to-list 'load-path "/Users/Nacho/.emacs.d/markdown-mode")
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -205,11 +205,10 @@
  '(electric-pair-mode t)
  '(electric-pair-text-pairs (quote ((34 . 34))))
  '(ido-enable-flex-matching t)
+ '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
    (quote
-    (company-go exec-path-from-shell go-mode yasnippet
-                web-mode use-package shell-pop markdown-mode
-                json-mode js2-mode haml-mode flycheck elpy auctex)))
+    (markdown-preview-mode company-go exec-path-from-shell go-mode yasnippet web-mode use-package shell-pop markdown-mode json-mode js2-mode haml-mode flycheck elpy auctex)))
  '(python-indent-guess-indent-offset nil)
  '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
