@@ -3,6 +3,7 @@
 .git/
 .gitignore
 .pubignore
+.gitattributes
 README.md
 .DS_Store
 *~
