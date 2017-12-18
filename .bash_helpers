@@ -33,8 +33,14 @@ mkcd() {
     mkdir -p $1; cd $1
 }
 
+# Set the terminal to its default dimensions.
 normalsize() {
     resize -s 24 80 >/dev/null;
+}
+
+# Open the Emacs GUI.
+openemacs(){
+    /Applications/Emacs.app/Contents/MacOS/Emacs "$@" &
 }
 
 # Render a pdf version of a man page
@@ -44,8 +50,22 @@ pdfman() {
     man -t $@ | pstopdf -i -o /tmp/$la.pdf && open /tmp/$la.pdf
 }
 
-openemacs(){
-    /Applications/Emacs.app/Contents/MacOS/Emacs "$@" &
+# Prototype of a function that copies files modified in this
+#   directory to the home directory.
+publish() {
+    cd ~/Development/configuration-files/
+
+    git push
+
+    for f in $(la); do
+        IGNORABLE=false
+        for g in $(less .pubignore); do
+            if [[ "$f" =~ "$g" ]]; then
+                IGNORABLE=true; break
+            fi
+        done
+        [ "$IGNORABLE" == true ] || cp $f ~/$f; unset IGNORABLE
+    done
 }
 
 # Goes up however many directories

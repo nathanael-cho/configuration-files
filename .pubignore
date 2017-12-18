@@ -1,0 +1,9 @@
+./
+../
+.git/
+.gitignore
+.pubignore
+README.md
+.DS_Store
+*~
+*.txt
