@@ -4,9 +4,8 @@
 
 ;; Packages that should be installed:
 ;;   auctex, company-go, elpy, exec-path-from-shell,
-;;   flycheck, go-mode, haml-mode, js2-mode, json-mode,
-;;   markdown-mode, markdown-preview-mode, shell-pop,
-;;   use-package, web-mode, yasnippet
+;;   flycheck, go-mode, markdown-mode, markdown-preview-mode,
+;;   shell-pop, use-package, yasnippet
 
 
 ;;; Commentary:
@@ -60,9 +59,6 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "GOPATH"))
-
-;; Invoke login shells
-(cond ((eq window-system 'ns) (setq shell-command-switch "-lc")))
 
 
 ;; Personal Configuration (General)
@@ -173,22 +169,6 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616/")
 (require 'shell-pop)
 
-;; Web-Mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(setq web-mode-content-types-alist
-      '(("jsx" . "\\.js[x]?\\'")))
-(defun my-web-mode-hook ()
-  "Adjust indenting for web-mode to two spaces."
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 4)
-  (setq web-mode-code-indent-offset 4))
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-(setq web-mode-enable-auto-pairing t)
-
 ;; Yasnippet
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
@@ -209,7 +189,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
    (quote
-    (markdown-preview-mode company-go exec-path-from-shell go-mode yasnippet web-mode use-package shell-pop markdown-mode json-mode js2-mode haml-mode flycheck elpy auctex)))
+    (markdown-preview-mode company-go exec-path-from-shell go-mode yasnippet use-package shell-pop markdown-mode flycheck elpy auctex)))
  '(python-indent-guess-indent-offset nil)
  '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
