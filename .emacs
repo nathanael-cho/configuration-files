@@ -204,6 +204,7 @@
  ;; If there is more than one, they won't work right.
  '(electric-pair-mode t)
  '(electric-pair-text-pairs (quote ((34 . 34))))
+ '(explicit-bash-args (quote ("--noediting" "--login" "-i")))
  '(ido-enable-flex-matching t)
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
@@ -214,7 +215,7 @@
  '(shell-pop-full-span t)
  '(shell-pop-shell-type
    (quote
-    ("term" "*term*"
+    ("shell" "*shell*"
      (lambda nil
        (term shell-pop-term-shell)))))
  '(shell-pop-term-shell "/usr/local/bin/bash")
