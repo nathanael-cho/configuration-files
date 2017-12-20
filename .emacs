@@ -22,6 +22,11 @@
   "Return true if STRING is empty or nil."
   (or (null string) (zerop (length string))))
 
+(defun indent-buffer ()
+  "Indent buffer according to major mode."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
 (defun set-python-environment (&optional version)
   "Make the Python environment use VERSION."
   (interactive)
@@ -189,7 +194,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
    (quote
-    (markdown-preview-mode company-go exec-path-from-shell go-mode yasnippet use-package shell-pop markdown-mode flycheck elpy auctex)))
+    (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy company-go auctex)))
  '(python-indent-guess-indent-offset nil)
  '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
