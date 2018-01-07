@@ -33,6 +33,11 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # Set up `ncdu`
 export NCDU_SHELL="/usr/local/bin/bash -l"
 
+# Set up `nvm`
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # Set up Pass
 source "/usr/local/etc/bash_completion.d/pass"
 
