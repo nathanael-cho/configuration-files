@@ -103,7 +103,8 @@
 (defun my-ess-mode-hook()
   (setq ess-blink-region nil)
   (ess-toggle-underscore nil)
-  (global-set-key (kbd "C-;")  (lambda () (interactive) (insert " <- "))))
+  (global-set-key (kbd "C-;")  (lambda () (interactive) (insert " <- ")))
+  (company-mode))
 (add-hook 'ess-mode-hook 'my-ess-mode-hook)
 
 ;; FlyCheck
@@ -169,6 +170,12 @@
 (let ((utop-command-prefix "opam config exec -- utop -emacs -init ")
       (utop-command-path "/Users/Nacho/.ocamlinit"))
   (setq utop-command (concat utop-command-prefix utop-command-path)))
+(defun ocaml-company-helper ()
+  "Configure company-mode for OCaml."
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'merlin-company-backend))
+  (company-mode))
+(add-hook 'merlin-mode-hook 'ocaml-company-helper)
 
 ;; Shell-Pop
 (add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616/")
