@@ -3,7 +3,7 @@
 ;; Author: Nathanael Cho
 
 ;; Packages that should be installed:
-;;   auctex, company, company-go, elpy, exec-path-from-shell,
+;;   auctex, company, company-go, conda, elpy, exec-path-from-shell,
 ;;   flycheck, go-mode, markdown-mode, markdown-preview-mode,
 ;;   shell-pop, use-package, yasnippet
 
@@ -95,8 +95,9 @@
 (defun my-python-mode-hook()
   (elpy-enable)
   (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
-      (set-python-environment "python")
-    (set-python-environment "python3")))
+      (set-python-environment (getenv "CONDA_PYTHON_EXE"))
+    (set-python-environment "python3"))
+  (require 'conda))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 
 ;; ESS
@@ -196,6 +197,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(conda-anaconda-home "/Users/Nacho/.miniconda/3")
  '(electric-pair-mode t)
  '(electric-pair-text-pairs (quote ((34 . 34))))
  '(explicit-bash-args (quote ("--noediting" "--login" "-i")))
@@ -203,7 +205,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
    (quote
-    (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy company-go company auctex)))
+    (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy conda company-go company auctex)))
  '(python-indent-guess-indent-offset nil)
  '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
