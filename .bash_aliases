@@ -5,6 +5,7 @@
 alias emacs=openemacs
 alias emasc=emacs
 alias emcas=emacs
+alias emsca=emacs
 alias emcs=emacs
 alias enw='\emacs -nw'
 

@@ -18,6 +18,9 @@ MPATH="$(cat /etc/paths | perl -pe 'chomp if eof' | tr '\n' ':'):$MPATH"
 [ -f "/usr/local/etc/bash_completion" ] &&
     source "/usr/local/etc/bash_completion"
 
+# Set up Conda
+export MPATH="$MPATH:/Users/Nacho/.miniconda/3/bin"
+
 # Set `emacs` as the default text editor
 export EDITOR='emacs'
 
