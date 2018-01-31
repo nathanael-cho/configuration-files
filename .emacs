@@ -92,10 +92,12 @@
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode-hook)
 
 ;; ElPy
-(elpy-enable)
-(if (not (empty-string-p (getenv "VIRTUAL_ENV")))
-    (set-python-environment "python")
-  (set-python-environment "python3"))
+(defun my-python-mode-hook()
+  (elpy-enable)
+  (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
+      (set-python-environment "python")
+    (set-python-environment "python3")))
+(add-hook 'python-mode-hook 'my-python-mode-hook)
 
 ;; ESS
 (add-to-list 'load-path "/Users/Nacho/.emacs.personal/ess/lisp")
