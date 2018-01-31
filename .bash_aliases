@@ -27,6 +27,8 @@ alias time='gtime'
 
 ## Homework
 
+alias 181='cd ~/School/181/'
+alias 181ts='cd ~/School/181/cs181-s18-homeworks-nathanael-cho/'
 alias 123='cd ~/School/123/'
 alias 123ps='cd ~/School/123/psets/'
 
@@ -52,3 +54,5 @@ alias pipdeptree='echo You should be using pdt[version number]'
 alias pdt2='echo; python2 -m \pipdeptree; echo'
 alias pdt3='echo; python3 -m \pipdeptree; echo'
 alias virtualenv='virtualenv --system-site-packages'
+alias va='source activate'
+alias da='source deactivate'
