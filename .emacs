@@ -3,7 +3,7 @@
 ;; Author: Nathanael Cho
 
 ;; Packages that should be installed:
-;;   auctex, company, company-go, conda, elpy, exec-path-from-shell,
+;;   auctex, company, company-go, elpy, exec-path-from-shell,
 ;;   flycheck, go-mode, markdown-mode, markdown-preview-mode,
 ;;   shell-pop, use-package, yasnippet
 
@@ -96,8 +96,7 @@
   (elpy-enable)
   (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
       (set-python-environment (getenv "CONDA_PYTHON_EXE"))
-    (set-python-environment "python3"))
-  (require 'conda))
+    (set-python-environment "python3")))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 
 ;; ESS
@@ -205,7 +204,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(package-selected-packages
    (quote
-    (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy conda company-go company auctex)))
+    (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy company-go company auctex)))
  '(python-indent-guess-indent-offset nil)
  '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
