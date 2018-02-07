@@ -94,6 +94,7 @@
 ;; ElPy
 (defun my-python-mode-hook()
   (elpy-enable)
+  (company-mode)
   (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
       (set-python-environment (getenv "CONDA_PYTHON_EXE"))
     (set-python-environment "python3")))
