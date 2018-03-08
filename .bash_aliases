@@ -33,6 +33,8 @@ alias 181ps='cd ~/School/181/cs181-practicals/'
 alias 181ts='cd ~/School/181/cs181-s18-homeworks-nathanael-cho/'
 alias 123='cd ~/School/123/'
 alias 123ps='cd ~/School/123/psets/'
+alias 152='cd ~/School/152/'
+alias 152ps='cd ~/School/152/psets/'
 
 ## Miscellaneous
 
@@ -53,7 +55,7 @@ alias prof='cd ~/Professional/'
 ## Python
 
 alias pipdeptree='echo You should be using pdt[version number]'
-alias pdt2='echo; python2 -m \pipdeptree; echo'
+alias pdt2='echo; python2.7 -m \pipdeptree; echo'
 alias pdt3='echo; python3 -m \pipdeptree; echo'
 alias virtualenv='virtualenv --system-site-packages'
 alias va='source activate'
