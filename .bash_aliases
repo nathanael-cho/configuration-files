@@ -49,14 +49,12 @@ alias textedit='open -a "textEdit"'
 alias cl='cd ~/Church\ Life/'
 alias conf='cd ~/Development/configuration-files/'
 alias dev='cd ~/Development/'
-alias pe='cd ~/.go/src/project_euler/'
+alias pe='cd ~/Development/.go/src/project_euler/'
 alias prof='cd ~/Professional/'
 
 ## Python
 
-alias pipdeptree='echo You should be using pdt[version number]'
-alias pdt2='echo; python2.7 -m \pipdeptree; echo'
-alias pdt3='echo; python3 -m \pipdeptree; echo'
+alias pdt='echo; python -m \pipdeptree; echo'
 alias virtualenv='virtualenv --system-site-packages'
 alias va='source activate'
 alias da='source deactivate'

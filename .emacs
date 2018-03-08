@@ -30,7 +30,7 @@
 (defun set-python-environment (&optional version)
   "Make the Python environment use VERSION."
   (interactive)
-  (unless version (setq version "python3"))
+  (unless version (setq version "python"))
   (setq elpy-rpc-python-command version)
   (setq python-shell-interpreter version))
 
@@ -97,7 +97,7 @@
   (company-mode)
   (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
       (set-python-environment (getenv "CONDA_PYTHON_EXE"))
-    (set-python-environment "python3")))
+    (set-python-environment "python")))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 
 ;; ESS
