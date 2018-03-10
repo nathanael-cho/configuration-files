@@ -42,6 +42,7 @@ alias athena='ssh ncho97@athena.dialup.mit.edu'
 alias cleanall='cleantilde; cleands'
 alias cleands='sudo find / -name ".DS_Store" -depth -exec rm {} \;'
 alias cleantilde='sudo find / -type f -name "*~" -exec rm -f "{}" \;'
+alias manualhmmt='cd ~/Dropbox/HMMT\ Archive/Holy\ Manual/'
 alias textedit='open -a "textEdit"'
 
 ## Navigation
