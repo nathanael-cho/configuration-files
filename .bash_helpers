@@ -42,7 +42,7 @@ mkcd() {
 
 # Set the terminal to its default dimensions
 normalsize() {
-    resize -s 20 80 >/dev/null;
+    resize -s 21 80 >/dev/null;
 }
 
 # Open the Emacs GUI
