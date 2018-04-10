@@ -19,7 +19,7 @@ MPATH="$(cat /etc/paths | perl -pe 'chomp if eof' | tr '\n' ':'):$MPATH"
     source "/usr/local/etc/bash_completion"
 
 # Set up Conda
-export MPATH="$MPATH:/Users/Nacho/.miniconda/3/bin"
+MPATH="$MPATH:/Users/Nacho/.miniconda/3/bin"
 
 # Set `emacs` as the default text editor
 export EDITOR='emacs'
@@ -29,6 +29,9 @@ export GOROOT='/usr/local/opt/go/libexec'
 export GOPATH="$HOME/Development/go"
 MPATH="$GOROOT/bin:$MPATH"
 MPATH="$GOPATH/bin:$MPATH"
+
+# Set up Haskell
+MPATH="$HOME/Library/Haskell/bin:$MPATH"
 
 # Set up Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
