@@ -8,6 +8,7 @@ alias emcas=emacs
 alias emsca=emacs
 alias emcs=emacs
 alias enw='\emacs -nw'
+alias eq='\emacs -nw -Q'
 
 ## General Command-Line Help
 
