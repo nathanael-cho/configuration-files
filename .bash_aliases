@@ -29,9 +29,6 @@ alias time='gtime'
 
 ## Homework
 
-alias 181='cd ~/School/181/'
-alias 181ps='cd ~/School/181/cs181-practicals/'
-alias 181ts='cd ~/School/181/cs181-s18-homeworks-nathanael-cho/'
 alias 123='cd ~/School/123/'
 alias 123ps='cd ~/School/123/psets/'
 alias 152='cd ~/School/152/'
