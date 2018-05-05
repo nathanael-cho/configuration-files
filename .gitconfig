@@ -1,7 +1,7 @@
 [push]
 	default = matching
 [user]
-	email = nathanael.cho15@gmail.com
+	email = nathanael.a.cho@gmail.com
 	name = Nathanael Cho
 [credential]
 	helper = osxkeychain
