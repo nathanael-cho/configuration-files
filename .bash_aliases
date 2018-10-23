@@ -2,13 +2,12 @@
 
 ## Emacs
 
-alias emacs=openemacs
 alias emasc=emacs
 alias emcas=emacs
 alias emsca=emacs
 alias emcs=emacs
-alias enw='\emacs -nw'
-alias eq='\emacs -nw -Q'
+alias enw='emacs -nw'
+alias eq='emacs -nw -Q'
 
 ## General Command-Line Help
 
@@ -26,21 +25,21 @@ alias refresh='cd; reset; exec bash -l'
 alias rm='echo You should be using trash'
 alias sncdu='sudo ncdu'
 alias time='gtime'
+alias timeout='gtimeout'
+alias ts='trash -s'
+alias tsy='trash -sy'
 
 ## Homework
 
-alias 123='cd ~/School/123/'
-alias 123ps='cd ~/School/123/psets/'
-alias 152='cd ~/School/152/'
-alias 152ps='cd ~/School/152/psets/'
+alias 153='cd ~/School/CS153/'
 
 ## Miscellaneous
 
-alias athena='ssh ncho97@athena.dialup.mit.edu'
 alias cleanall='cleantilde; cleands'
 alias cleands='sudo find / -name ".DS_Store" -depth -exec rm {} \;'
 alias cleantilde='sudo find / -type f -name "*~" -exec rm -f "{}" \;'
 alias manualhmmt='cd ~/Dropbox/HMMT\ Archive/Holy\ Manual/'
+alias shs='ssh ncho@nice.fas.harvard.edu'
 alias textedit='open -a "textEdit"'
 
 ## Navigation

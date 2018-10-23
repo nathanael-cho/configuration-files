@@ -17,7 +17,7 @@ dictlu() {
 # Open a file with Emacs in the terminal in read-only mode
 evo() {
     if ! [ -z "$1" ]; then
-        \emacs -nw "$1" --eval '(setq buffer-read-only t)'
+        emacs -nw "$1" --eval '(setq buffer-read-only t)'
     fi
 }
 
@@ -43,11 +43,6 @@ mkcd() {
 # Set the terminal to its default dimensions
 normalsize() {
     resize -s 21 80 >/dev/null;
-}
-
-# Open the Emacs GUI
-openemacs(){
-    /Applications/Emacs.app/Contents/MacOS/Emacs "$@" &
 }
 
 # Render a pdf version of a man page

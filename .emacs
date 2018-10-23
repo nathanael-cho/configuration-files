@@ -158,27 +158,6 @@
 
 ;; OCaml
 (load "/Users/Nacho/.opam/system/share/emacs/site-lisp/tuareg-site-file")
-(defun opam-share-value ()
-  "Get opam-share value for subsequent let statement."
-  (ignore-errors (car (process-lines "opam" "config" "var" "share"))))
-(let ((opam-share (opam-share-value)))
-  (when (and opam-share (file-directory-p opam-share))
-    (add-to-list 'load-path (expand-file-name "emacs/site-lisp" opam-share))
-    (autoload 'merlin-mode "merlin" nil t nil)
-    (add-hook 'tuareg-mode-hook 'merlin-mode t)
-    (add-hook 'caml-mode-hook 'merlin-mode t)))
-(autoload 'utop "utop" "utop" t)
-(autoload 'utop-minor-mode "utop" "utop" t)
-(add-hook 'tuareg-mode-hook 'utop-minor-mode)
-(let ((utop-command-prefix "opam config exec -- utop -emacs -init ")
-      (utop-command-path "/Users/Nacho/.ocamlinit"))
-  (setq utop-command (concat utop-command-prefix utop-command-path)))
-(defun ocaml-company-helper ()
-  "Configure company-mode for OCaml."
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'merlin-company-backend))
-  (company-mode))
-(add-hook 'merlin-mode-hook 'ocaml-company-helper)
 
 ;; Shell-Pop
 (add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616/")

@@ -4,7 +4,3 @@ let () =
   with Not_found -> ()
 ;;
 
-(* Added by me. *)
-#use "topfind";;
-#thread;;
-#require "core";;

@@ -30,9 +30,6 @@ export GOPATH="$HOME/Development/go"
 MPATH="$GOROOT/bin:$MPATH"
 MPATH="$GOPATH/bin:$MPATH"
 
-# Set up Haskell
-MPATH="$HOME/Library/Haskell/bin:$MPATH"
-
 # Set up Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
@@ -59,5 +56,5 @@ MPATH="/usr/local/opt/sqlite/bin:$MPATH"
 # Set PATH correctly
 export PATH=$MPATH && unset MPATH
 
-# Configure OPAM, now that we have the correct PATH
+# OPAM configuration now that PATH is correct
 . /Users/Nacho/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
