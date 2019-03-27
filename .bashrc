@@ -53,6 +53,8 @@ MPATH="$HOME/.rvm/bin:$MPATH"
 # Set up `sqlite`
 MPATH="/usr/local/opt/sqlite/bin:$MPATH"
 
+MPATH="/usr/local/sbin:$MPATH"
+
 # Set PATH correctly
 export PATH=$MPATH && unset MPATH
 
