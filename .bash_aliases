@@ -22,6 +22,7 @@ alias agh='ag --hidden'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias curl='/usr/local/opt/curl/bin/curl'
 alias dh='history -cw; \rm ~/.bash_history; touch ~/.bash_history'
+alias e='exit'
 alias gdb='lldb'
 alias gti='git'
 alias ls='gls -p --color=auto'
@@ -40,15 +41,9 @@ alias tsy='trash -sy'
 
 ## Virtual Machine Shenanigans
 
-alias vsl='VBoxManage startvm linux-vm --type headless'
-alias vel='VBoxManage controlvm linux-vm poweroff'
+alias vs='VBoxManage startvm linux-vm --type headless'
+alias ve='VBoxManage controlvm linux-vm poweroff'
 alias slvm='ssh lvm'
-
-## Homework
-
-alias vs='VBoxManage startvm mininet --type headless'
-alias ve='VBoxManage controlvm mininet poweroff'
-alias m='ssh mininet@localhost -p 1337'
 
 ## Miscellaneous
 
@@ -69,7 +64,6 @@ alias prof='cd ~/Professional/'
 
 ## Python
 
-alias pdt='echo; python -m \pipdeptree; echo'
 alias virtualenv='virtualenv --system-site-packages'
 alias va='source activate'
-alias da='source deactivate'
+alias da='conda deactivate'

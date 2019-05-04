@@ -15,11 +15,10 @@
 
 ;;; Code:
 
-
 ;; Helper Functions
 
 (defun empty-string-p (string)
-  "Return true if STRING is empty or nil."
+  "Return non-nil if STRING is empty or nil."
   (or (null string) (zerop (length string))))
 
 (defun indent-buffer ()
@@ -27,20 +26,11 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
-(defun set-python-environment (&optional version)
-  "Make the Python environment use VERSION."
-  (interactive)
-  (unless version (setq version "python"))
-  (setq elpy-rpc-python-command version)
-  (setq python-shell-interpreter version))
-
 
 ;; Initial Setup
 
 (setq inhibit-startup-message t)
 (setq column-number-mode t)
-
-(add-to-list 'exec-path "/usr/local/bin/")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -92,23 +82,12 @@
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode-hook)
 
 ;; ElPy
+(elpy-enable)
 (defun my-python-mode-hook()
-  (elpy-enable)
+  "Hook for Python setup."
   (company-mode)
-  (if (not (empty-string-p (getenv "CONDA_PYTHON_EXE")))
-      (set-python-environment (getenv "CONDA_PYTHON_EXE"))
-    (set-python-environment "python")))
+  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
-
-;; ESS
-(add-to-list 'load-path "/Users/Nacho/.emacs.personal/ess/lisp")
-(load "ess-site")
-(defun my-ess-mode-hook()
-  (setq ess-blink-region nil)
-  (ess-toggle-underscore nil)
-  (global-set-key (kbd "C-;")  (lambda () (interactive) (insert " <- ")))
-  (company-mode))
-(add-hook 'ess-mode-hook 'my-ess-mode-hook)
 
 ;; FlyCheck
 (use-package flycheck
@@ -160,7 +139,7 @@
 (load "/Users/Nacho/.opam/system/share/emacs/site-lisp/tuareg-site-file")
 
 ;; Shell-Pop
-(add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616/")
+(add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616")
 (require 'shell-pop)
 
 ;; Yasnippet
@@ -176,7 +155,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(conda-anaconda-home "/Users/Nacho/.miniconda/3")
  '(electric-pair-mode t)
  '(electric-pair-text-pairs (quote ((34 . 34))))
  '(explicit-bash-args (quote ("--noediting" "--login" "-i")))
@@ -186,7 +164,6 @@
    (quote
     (yasnippet use-package shell-pop markdown-preview-mode markdown-mode go-mode flycheck exec-path-from-shell elpy company-go company auctex)))
  '(python-indent-guess-indent-offset nil)
- '(python-shell-completion-native-enable nil)
  '(shell-pop-full-span t)
  '(shell-pop-shell-type
    (quote
@@ -194,9 +171,9 @@
      (lambda nil
        (term shell-pop-term-shell)))))
  '(shell-pop-term-shell "/usr/local/bin/bash")
- '(shell-pop-universal-key "C-S-S")
- '(shell-pop-window-position "full")
- '(shell-pop-window-size 100))
+ '(shell-pop-universal-key "C-t")
+ '(shell-pop-window-position "bottom")
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -26,9 +26,11 @@ export EDITOR='emacs'
 
 # Set up Go
 export GOROOT='/usr/local/opt/go/libexec'
-export GOPATH="$HOME/Development/go"
+GOPATH_ONE="$HOME/.go"
+GOPATH_TWO="$HOME/Development/problems/go"
+export GOPATH="$GOPATH_ONE:$GOPATH_TWO"
 MPATH="$GOROOT/bin:$MPATH"
-MPATH="$GOPATH/bin:$MPATH"
+MPATH="$GOPATH_ONE/bin:$GOPATH_TWO/bin:$MPATH"
 
 # Set up Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
@@ -60,3 +62,12 @@ export PATH=$MPATH && unset MPATH
 
 # OPAM configuration now that PATH is correct
 . /Users/Nacho/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+# I want the aliases and helpers in all shells
+if [ -f "$HOME/.bash_helpers" ]; then
+    source "$HOME/.bash_helpers"
+fi
+
+if [ -f "$HOME/.bash_aliases" ]; then
+    source "$HOME/.bash_aliases"
+fi
