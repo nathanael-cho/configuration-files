@@ -71,3 +71,25 @@ fi
 if [ -f "$HOME/.bash_aliases" ]; then
     source "$HOME/.bash_aliases"
 fi
+
+# Use Ubuntu colors
+case "$TERM" in
+    xterm-color|*-256color) COLOR_PROMPT=yes;;
+esac
+# FORCE_COLOR_PROMPT=yes
+if [ -n "$FORCE_COLOR_PROMPT" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	COLOR_PROMPT=yes
+    else
+	COLOR_PROMPT=
+    fi
+fi
+# Replace the hostname with OSX
+if [ "$COLOR_PROMPT" = yes ]; then
+    PS1='\[\033[00;35m\]\u@OSX:\w\$\[\033[00m\] '
+else
+    PS1='\u@OSX:\w\$ '
+fi
+unset COLOR_PROMPT FORCE_COLOR_PROMPT
+
+eval `gdircolors ~/.dircolors`

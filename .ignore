@@ -11,11 +11,10 @@ Applications
 [Cc]ache
 [Cc]aches
 elpa/archives
-HMMT Archive
 Library
 [Ll]og
 [Ll]ogs
+Pictures/Photos Library.photoslibrary
 *.pvm
 /tmp/
-*.vmwarevm
 X11

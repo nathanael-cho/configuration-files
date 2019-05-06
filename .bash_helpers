@@ -23,7 +23,7 @@ evo() {
 
 # Check the status of all git repositories
 gitrepos() {
-    find ~ -name ".git" -not -path "/Users/Nacho/Dropbox/HMMT Archive/*" -not -path "/Users/Nacho/.nvm/*" 2> /dev/null | sed 's/\/.git/\//g' | awk '{print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1; system("git --git-dir="$1".git --work-tree="$1" fetch && git --git-dir="$1".git --work-tree="$1" status")}'
+    find ~ -name ".git" -not -path "/Users/Nacho/.go/*" -not -path "/Users/Nacho/.nvm/*" 2> /dev/null | sed 's/\/.git/\//g' | awk '{print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1; system("git --git-dir="$1".git --work-tree="$1" fetch && git --git-dir="$1".git --work-tree="$1" status")}'
 }
 
 # Check whether the user is in a subshell
@@ -55,6 +55,8 @@ pdfman() {
 # Prototype of a function that copies files modified in this
 #   directory to the home directory
 publish() {
+    SNAPSHOT=$(pwd)
+
     cd ~/Development/configuration-files/
 
     git push
@@ -68,7 +70,10 @@ publish() {
         done
         [ "$IGNORABLE" == true ] || cp $f ~/$f
     done
-    unset IGNORABLE
+
+    cd $SNAPSHOT
+
+    unset IGNORABLE SNAPSHOT
 }
 
 # Goes up however many directories

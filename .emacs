@@ -128,7 +128,6 @@
 (ido-mode t)
 
 ;; Markdown
-(add-to-list 'load-path "/Users/Nacho/.emacs.d/markdown-mode")
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -139,11 +138,9 @@
 (load "/Users/Nacho/.opam/system/share/emacs/site-lisp/tuareg-site-file")
 
 ;; Shell-Pop
-(add-to-list 'load-path "~/.emacs.d/elpa/shell-pop-20170304.616")
 (require 'shell-pop)
 
 ;; Yasnippet
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 
