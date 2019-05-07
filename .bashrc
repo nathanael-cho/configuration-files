@@ -86,7 +86,7 @@ if [ -n "$FORCE_COLOR_PROMPT" ]; then
 fi
 # Replace the hostname with OSX
 if [ "$COLOR_PROMPT" = yes ]; then
-    PS1='\[\033[00;35m\]\u@OSX:\w\$\[\033[00m\] '
+    PS1='\[\033[00;35m\]\u@OSX\[\033[00m\]:\[\033[00;35m\]\w\[\033[00m\]\$ '
 else
     PS1='\u@OSX:\w\$ '
 fi
