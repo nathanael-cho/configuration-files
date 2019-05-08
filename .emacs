@@ -59,7 +59,7 @@
 ;; Personal Configuration (General)
 
 ;; Thin cursor
-(setq-default cursor-type 'bar)
+(setq-default cursor-type 'box)
 
 ;; Spaces instead of tabs for indentation
 (setq-default indent-tabs-mode nil)
