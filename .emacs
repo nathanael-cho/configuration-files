@@ -71,6 +71,9 @@
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.bash_helpers\\'" . shell-script-mode))
 
+;; New key-binding for setting the mark
+(global-set-key (kbd "M-<SPC>") 'set-mark-command)
+
 
 ;; Package Configuration
 
@@ -88,6 +91,11 @@
   (company-mode)
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
+
+;; Evil mode
+(add-to-list 'load-path "~/.emacs.personal/evil")
+(require 'evil)
+(evil-mode 1)
 
 ;; FlyCheck
 (use-package flycheck
@@ -154,6 +162,7 @@
  ;; If there is more than one, they won't work right.
  '(electric-pair-mode t)
  '(electric-pair-text-pairs (quote ((34 . 34))))
+ '(evil-default-state (quote emacs))
  '(explicit-bash-args (quote ("--noediting" "--login" "-i")))
  '(ido-enable-flex-matching t)
  '(markdown-command "/usr/local/bin/pandoc")

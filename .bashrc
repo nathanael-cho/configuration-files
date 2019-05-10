@@ -74,7 +74,7 @@ fi
 
 # Use Ubuntu colors
 case "$TERM" in
-    xterm-color|*-256color) COLOR_PROMPT=yes;;
+    xterm-color|xterm-16color|*-256color) COLOR_PROMPT=yes;;
 esac
 # FORCE_COLOR_PROMPT=yes
 if [ -n "$FORCE_COLOR_PROMPT" ]; then
