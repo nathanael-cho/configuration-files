@@ -4,7 +4,7 @@
 
 ;; Packages that should be installed:
 ;;   auctex, company, company-go, elpy, exec-path-from-shell,
-;;   flycheck, go-mode, markdown-mode, markdown-preview-mode,
+;;   evil, flycheck, go-mode, markdown-mode, markdown-preview-mode,
 ;;   shell-pop, use-package, yasnippet
 
 
