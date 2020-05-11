@@ -39,19 +39,17 @@ alias timeout='gtimeout'
 alias ts='trash -s'
 alias tsy='trash -sy'
 
-## Virtual Machine Shenanigans
+## Virtual Machine Shenanigans (for Pi-Hole)
 
-alias vs='VBoxManage startvm linux-vm --type headless'
-alias ve='VBoxManage controlvm linux-vm poweroff'
-alias slvm='ssh lvm'
+alias vs='VBoxManage startvm pi-hole --type headless'
+alias ve='VBoxManage controlvm pi-hole poweroff'
+alias sph='ssh pi-hole'
 
 ## Miscellaneous
 
 alias cleanall='cleantilde; cleands'
 alias cleands='sudo find / -name ".DS_Store" -depth -exec rm {} \;'
 alias cleantilde='sudo find / -type f -name "*~" -exec rm -f "{}" \;'
-alias manualhmmt='cd ~/Dropbox/HMMT\ Archive/Holy\ Manual/'
-alias shs='ssh ncho@nice.fas.harvard.edu'
 alias textedit='open -a "textEdit"'
 
 ## Navigation
