@@ -85,12 +85,12 @@
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode-hook)
 
 ;; ElPy
-(elpy-enable)
-(defun my-python-mode-hook()
-  "Hook for Python setup."
-  (company-mode)
-  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
-(add-hook 'python-mode-hook 'my-python-mode-hook)
+; (elpy-enable)
+; (defun my-python-mode-hook()
+;   "Hook for Python setup."
+;   (company-mode)
+;   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
+; (add-hook 'python-mode-hook 'my-python-mode-hook)
 
 ;; Evil mode
 (add-to-list 'load-path "~/.emacs.personal/evil")
